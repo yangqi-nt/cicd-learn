@@ -16,6 +16,7 @@ on:
     branches: [ "main" ]
 
 env:
+  REGISTRY: registry.cn-hangzhou.aliyuncs.com
   # github.repository as <account>/<repo>
   IMAGE_NAME: ${{ github.repository }}
 
