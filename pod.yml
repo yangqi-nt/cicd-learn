@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cicd-learn
+spec:
+  containers:
+    - name: cicd-learn
+      image: registry.cn-hangzhou.aliyuncs.com/yangqi_dev/cicd-learn:nightly
+      ports:
+        - containerPort: 8080
+  imagePullSecrets:
+    - name: regcred
