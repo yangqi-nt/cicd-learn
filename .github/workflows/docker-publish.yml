@@ -12,10 +12,8 @@ on:
 #    branches: [ "main" ]
   workflow_run:
     workflows: [ "SonarCloud"]
-    types: [ completed ]
-    branches:
-      - "dev"
-      - "main"
+    types:
+      - completed
 
 env:
   REGISTRY: registry.cn-hangzhou.aliyuncs.com
