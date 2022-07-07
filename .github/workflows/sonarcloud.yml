@@ -29,10 +29,6 @@
 name: SonarCloud analysis
 
 on:
-  push:
-    branches: [ "dev" ]
-  pull_request:
-    branches: [ "main" ]
   workflow_dispatch:
   workflow_run:
     workflows: [ "CodeQL"]
