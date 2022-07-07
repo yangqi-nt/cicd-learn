@@ -6,12 +6,15 @@ name: Docker
 # documentation.
 
 on:
-  schedule:
-    - cron: '15 7 * * *'
   push:
-    branches: [ "main", "dev" ]
+    branches: [ "dev" ]
     # Publish semver tags as releases.
     tags: [ 'v*.*.*' ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_run:
+    workflows: [ "SonarCloud"]
+    types: [ completed ]
 
 env:
   REGISTRY: registry.cn-hangzhou.aliyuncs.com

@@ -2,11 +2,14 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: cicd-learn
+  labels:
+    app: cicd-learn
 spec:
   containers:
     - name: cicd-learn
-      image: registry.cn-hangzhou.aliyuncs.com/yangqi_dev/cicd-learn:nightly
+      image: registry.cn-hangzhou.aliyuncs.com/yangqi_dev/cicd-learn:dev
       ports:
         - containerPort: 8080
+          protocol: TCP
   imagePullSecrets:
     - name: regcred

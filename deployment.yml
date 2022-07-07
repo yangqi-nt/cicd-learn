@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cicd-learn
+  labels:
+    app: cicd-learn
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: cicd-learn
+  template:
+    metadata:
+      labels:
+        app: cicd-learn
+    spec:
+      containers:
+        - name: cicd-learn
+          image: registry.cn-hangzhou.aliyuncs.com/yangqi_dev/cicd-learn:dev
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+      imagePullSecrets:
+        - name: regcred
+
+---
+# Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: cicd-learn
+  labels:
+    app: cicd-learn
+spec:
+  type: NodePort
+  ports:
+      - port: 8080
+        nodePort: 30001
+  selector:
+      app: cicd-learn
