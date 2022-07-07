@@ -6,13 +6,16 @@ name: Docker
 # documentation.
 
 on:
-  push:
-    branches: [ "dev" ]
-  pull_request:
-    branches: [ "main" ]
+#  push:
+#    branches: [ "dev" ]
+#  pull_request:
+#    branches: [ "main" ]
   workflow_run:
     workflows: [ "SonarCloud"]
     types: [ completed ]
+    branches:
+      - "dev"
+      - "main"
 
 env:
   REGISTRY: registry.cn-hangzhou.aliyuncs.com

@@ -29,14 +29,17 @@
 name: SonarCloud
 
 on:
-  push:
-    branches: [ "dev" ]
-  pull_request:
-    branches: [ "main" ]
+#  push:
+#    branches: [ "dev" ]
+#  pull_request:
+#    branches: [ "main" ]
   workflow_dispatch:
   workflow_run:
-    workflows: [ "CodeQL"]
+    workflows: [ "CodeQL" ]
     types: [ requested ]
+    branches:
+      - "dev"
+      - "main"
 
 permissions:
   pull-requests: read # allows SonarCloud to decorate PRs with analysis results
