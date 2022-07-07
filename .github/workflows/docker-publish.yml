@@ -6,12 +6,8 @@ name: Docker
 # documentation.
 
 on:
-#  push:
-#    branches: [ "dev" ]
-#  pull_request:
-#    branches: [ "main" ]
   workflow_run:
-    workflows: [ "SonarCloud"]
+    workflows: [ "SonarCloud" ]
     types:
       - completed
 
