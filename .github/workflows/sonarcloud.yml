@@ -37,7 +37,6 @@ on:
   workflow_run:
     workflows: [ "CodeQL"]
     types: [ requested ]
-    branches: [ "main", "dev" ]
 
 permissions:
   pull-requests: read # allows SonarCloud to decorate PRs with analysis results
