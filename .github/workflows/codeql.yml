@@ -12,10 +12,10 @@
 name: CodeQL
 
 on:
-  push:
-    branches: [ "dev" ]
-  pull_request:
-    branches: [ "main" ]
+  workflow_run:
+    workflows: [ "Docker" ]
+    types:
+      - requested
 
 jobs:
   analyze:
